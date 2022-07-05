@@ -1,0 +1,648 @@
+MongoDB shell version v5.0.9
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("7c94be28-63fb-46c5-8e29-f7753ad729d3") }
+MongoDB server version: 5.0.9
+================
+Warning: the "mongo" shell has been superseded by "mongosh",
+which delivers improved usability and compatibility.The "mongo" shell has been deprecated and will be removed in
+an upcoming release.
+For installation instructions, see
+https://docs.mongodb.com/mongodb-shell/install/
+================
+---
+The server generated these startup warnings when booting:
+        2022-07-01T10:34:18.907-05:00: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+---
+---
+        Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+        metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+        The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+        and anyone you share the URL with. MongoDB may use this information to make product
+        improvements and to suggest MongoDB products and deployment options to you.
+
+        To enable free monitoring, run the following command: db.enableFreeMonitoring()
+        To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+> show dbs;
+admin            0.000GB
+config           0.000GB
+dbJohanaSalazar  0.000GB
+dbNewPerson      0.000GB
+inspectionsjs    0.009GB
+local            0.000GB
+miscelanea       0.031GB
+> use inspectionsjs
+switched to db inspectionsjs
+> show collections
+inspections
+libros
+> db.inspections.find().pretty()
+{
+        "_id" : ObjectId("56d61033a378eccde8a83550"),
+        "id" : "10057-2015-ENFO",
+        "certificate_number" : 6007104,
+        "business_name" : "LD BUSINESS SOLUTIONS",
+        "date" : "Feb 25 2015",
+        "result" : "Violation Issued",
+        "sector" : "Tax Preparers - 891",
+        "address" : {
+                "city" : "NEW YORK",
+                "zip" : 10030,
+                "street" : "FREDERICK DOUGLASS BLVD",
+                "number" : 2655
+        }
+}
+{
+        "_id" : ObjectId("56d61033a378eccde8a83553"),
+        "id" : "10127-2015-CMPL",
+        "certificate_number" : 5381180,
+        "business_name" : "ERIC CONSTRUCTION AND DECORATING INC.",
+        "date" : "Sep  8 2015",
+        "result" : "Violation Issued",
+        "sector" : "Home Improvement Contractor - 100",
+        "address" : {
+                "city" : "STATEN ISLAND",
+                "zip" : 10304,
+                "street" : "TODT HILL RD",
+                "number" : 1233
+        }
+}
+{
+        "_id" : ObjectId("56d61033a378eccde8a83557"),
+        "id" : "10284-2015-ENFO",
+        "certificate_number" : 9287088,
+        "business_name" : "VYACHESLAV KANDZHANOV",
+        "date" : "Feb 25 2015",
+        "result" : "No Violation Issued",
+        "sector" : "Misc Non-Food Retail - 817",
+        "address" : {
+                "city" : "NEW YORK",
+                "zip" : 10030,
+                "street" : "FREDRCK D BLVD",
+                "number" : 2655
+        }
+}
+{
+        "_id" : ObjectId("56d61033a378eccde8a83558"),
+        "id" : "10312-2015-ENFO",
+        "certificate_number" : 9287090,
+        "business_name" : "GRICEYDA M VILLAR",
+        "date" : "Feb 25 2015",
+        "result" : "No Violation Issued",
+        "sector" : "Salons And Barbershop - 841",
+        "address" : {
+                "city" : "NEW YORK",
+                "zip" : 10030,
+                "street" : "FREDRCK D BLVD",
+                "number" : 2645
+        }
+}
+{
+        "_id" : ObjectId("56d61033a378eccde8a83559"),
+        "id" : "10302-2015-ENFO",
+        "certificate_number" : 9287089,
+        "business_name" : "NYC CANDY STORE SHOP CORP",
+        "date" : "Feb 25 2015",
+        "result" : "No Violation Issued",
+        "sector" : "Cigarette Retail Dealer - 127",
+        "address" : {
+                "city" : "NEW YORK",
+                "zip" : 10030,
+                "street" : "FREDRCK D BLVD",
+                "number" : 2653
+        }
+}
+{
+        "_id" : ObjectId("56d61033a378eccde8a8355a"),
+        "id" : "10290-2015-CMPL",
+        "certificate_number" : 9305498,
+        "business_name" : "AYAD YOUSSEF",
+        "date" : "Jul 23 2015",
+        "result" : "No Violation Issued",
+        "sector" : "Mobile Food Vendor - 881",
+        "address" : {
+                "city" : "JERSEY CITY",
+                "zip" : 7306,
+                "street" : "TONNELE AVE",
+                "number" : 70
+        }
+}
+{
+        "_id" : ObjectId("56d61033a378eccde8a8355b"),
+        "id" : "10318-2015-ENFO",
+        "certificate_number" : 9287092,
+        "business_name" : "BISHWANATH BISWAS",
+        "date" : "Feb 25 2015",
+        "result" : "No Violation Issued",
+        "sector" : "Mobile Food Vendor - 881",
+        "address" : {
+                "city" : "ELMHURST",
+                "zip" : 11373,
+                "street" : "75TH ST",
+                "number" : 4157
+        }
+}
+{
+        "_id" : ObjectId("56d61033a378eccde8a8355d"),
+        "id" : "10351-2015-CMPL",
+        "certificate_number" : 5381196,
+        "business_name" : "NEW FINEST BUILDERS INC",
+        "date" : "Dec  1 2015",
+        "result" : "Violation Issued",
+        "sector" : "Home Improvement Contractor - 100",
+        "address" : {
+                "city" : "BROOKLYN",
+                "zip" : 11234,
+                "street" : "E 55TH ST",
+                "number" : 1320
+        }
+}
+{
+        "_id" : ObjectId("56d61033a378eccde8a8354f"),
+        "id" : "10021-2015-ENFO",
+        "certificate_number" : 9278806,
+        "business_name" : "ATLIXCO DELI GROCERY INC.",
+        "date" : "Feb 20 2015",
+        "result" : "No Violation Issued",
+        "sector" : "Cigarette Retail Dealer - 127",
+        "address" : {
+                "city" : "RIDGEWOOD",
+                "zip" : 11385,
+                "street" : "MENAHAN ST",
+                "number" : 1712
+        }
+}
+{
+        "_id" : ObjectId("56d61033a378eccde8a83555"),
+        "id" : "102-2015-UNIT",
+        "certificate_number" : 10003479,
+        "business_name" : "SOUTH BRONX AUTOMOTIVE CORP",
+        "date" : "May 28 2015",
+        "result" : "Pass",
+        "sector" : "Tow Truck Company - 124",
+        "address" : {
+                "city" : "",
+                "zip" : "",
+                "street" : "",
+                "number" : ""
+        }
+}
+{
+        "_id" : ObjectId("56d61033a378eccde8a8355e"),
+        "id" : "10391-2015-ENFO",
+        "certificate_number" : 3019415,
+        "business_name" : "WILFREDO DELIVERY SERVICE INC",
+        "date" : "Feb 26 2015",
+        "result" : "Fail",
+        "sector" : "Fuel Oil Dealer - 814",
+        "address" : {
+                "city" : "WADING RIVER",
+                "zip" : 11792,
+                "street" : "WADING RIVER MANOR RD",
+                "number" : 1607
+        }
+}
+{
+        "_id" : ObjectId("56d61033a378eccde8a8355f"),
+        "id" : "10423-2015-CMPL",
+        "certificate_number" : 9304139,
+        "business_name" : "LISANDRO CABRERA",
+        "date" : "Jul 17 2015",
+        "result" : "No Violation Issued",
+        "sector" : "Mobile Food Vendor - 881",
+        "address" : {
+                "city" : "BRONX",
+                "zip" : 10475,
+                "street" : "PALMER AVE",
+                "number" : 2234
+        }
+}
+{
+        "_id" : ObjectId("56d61033a378eccde8a83560"),
+        "id" : "1044-2016-ENFO",
+        "certificate_number" : 9318079,
+        "business_name" : "AZMY KIROLES",
+        "date" : "Dec 23 2015",
+        "result" : "No Violation Issued",
+        "sector" : "Mobile Food Vendor - 881",
+        "address" : {
+                "city" : "JERSEY CITY",
+                "zip" : 7306,
+                "street" : "VROOM ST",
+                "number" : 160
+        }
+}
+{
+        "_id" : ObjectId("56d61033a378eccde8a83561"),
+        "id" : "1044-2015-CMPL",
+        "certificate_number" : 5382334,
+        "business_name" : "BUILDING TO SERVE INC.",
+        "date" : "Jul 22 2015",
+        "result" : "Violation Issued",
+        "sector" : "Home Improvement Contractor - 100",
+        "address" : {
+                "city" : "JAMAICA",
+                "zip" : 11432,
+                "street" : "HILLSIDE AVE",
+                "number" : 17939
+        }
+}
+{
+        "_id" : ObjectId("56d61033a378eccde8a83562"),
+        "id" : "10459-2015-ENFO",
+        "certificate_number" : 3019419,
+        "business_name" : "SPRAGUE OPERATING RESOURCES LLC.",
+        "date" : "Feb 27 2015",
+        "result" : "Pass",
+        "sector" : "Fuel Oil Dealer - 814",
+        "address" : {
+                "city" : "LAWRENCE",
+                "zip" : 11559,
+                "street" : "BAY BLVD",
+                "number" : 1
+        }
+}
+{
+        "_id" : ObjectId("56d61033a378eccde8a83552"),
+        "id" : "1012-2015-CMPL",
+        "certificate_number" : 5346909,
+        "business_name" : "A&C CHIMNEY CORP.",
+        "date" : "Apr 22 2015",
+        "result" : "Violation Issued",
+        "sector" : "Home Improvement Contractor - 100",
+        "address" : {
+                "city" : "QUEENS VLG",
+                "zip" : 11428,
+                "street" : "210TH ST",
+                "number" : 9440
+        }
+}
+{
+        "_id" : ObjectId("56d61033a378eccde8a83563"),
+        "id" : "10464-2015-CMPL",
+        "certificate_number" : 5381856,
+        "business_name" : "NADER R. ABDELREHIM",
+        "date" : "Aug 21 2015",
+        "result" : "Violation Issued",
+        "sector" : "Mobile Food Vendor - 881",
+        "address" : {
+                "city" : "BROOKLYN",
+                "zip" : 11222,
+                "street" : "NEWELL ST",
+                "number" : 51
+        }
+}
+{
+        "_id" : ObjectId("56d61033a378eccde8a83564"),
+        "id" : "10465-2015-CMPL",
+        "certificate_number" : 9289037,
+        "business_name" : "UNNAMED HOT DOG WAGON  NO LICENSE NUMBER PROVIDED",
+        "date" : "Jul 23 2015",
+        "result" : "Unable to Locate",
+        "sector" : "Mobile Food Vendor - 881",
+        "address" : {
+                "city" : "",
+                "zip" : "",
+                "street" : "",
+                "number" : ""
+        }
+}
+{
+        "_id" : ObjectId("56d61033a378eccde8a83565"),
+        "id" : "1048-2016-ENFO",
+        "certificate_number" : 9319054,
+        "business_name" : "QUIRINO MORALES",
+        "date" : "Dec 23 2015",
+        "result" : "No Violation Issued",
+        "sector" : "Mobile Food Vendor - 881",
+        "address" : {
+                "city" : "EAST ELMHURST",
+                "zip" : 11370,
+                "street" : "80TH ST",
+                "number" : 3216
+        }
+}
+{
+        "_id" : ObjectId("56d61033a378eccde8a83551"),
+        "id" : "10084-2015-ENFO",
+        "certificate_number" : 9278914,
+        "business_name" : "MICHAEL GOMEZ RANGHALL",
+        "date" : "Feb 10 2015",
+        "result" : "No Violation Issued",
+        "sector" : "Locksmith - 062",
+        "address" : {
+                "city" : "QUEENS VLG",
+                "zip" : 11427,
+                "street" : "214TH ST",
+                "number" : 8823
+        }
+}
+Type "it" for more
+> db.inspections.find({"address.zip":{$eq:10030}}).pretty()
+{
+        "_id" : ObjectId("56d61033a378eccde8a83550"),
+        "id" : "10057-2015-ENFO",
+        "certificate_number" : 6007104,
+        "business_name" : "LD BUSINESS SOLUTIONS",
+        "date" : "Feb 25 2015",
+        "result" : "Violation Issued",
+        "sector" : "Tax Preparers - 891",
+        "address" : {
+                "city" : "NEW YORK",
+                "zip" : 10030,
+                "street" : "FREDERICK DOUGLASS BLVD",
+                "number" : 2655
+        }
+}
+{
+        "_id" : ObjectId("56d61033a378eccde8a83557"),
+        "id" : "10284-2015-ENFO",
+        "certificate_number" : 9287088,
+        "business_name" : "VYACHESLAV KANDZHANOV",
+        "date" : "Feb 25 2015",
+        "result" : "No Violation Issued",
+        "sector" : "Misc Non-Food Retail - 817",
+        "address" : {
+                "city" : "NEW YORK",
+                "zip" : 10030,
+                "street" : "FREDRCK D BLVD",
+                "number" : 2655
+        }
+}
+{
+        "_id" : ObjectId("56d61033a378eccde8a83558"),
+        "id" : "10312-2015-ENFO",
+        "certificate_number" : 9287090,
+        "business_name" : "GRICEYDA M VILLAR",
+        "date" : "Feb 25 2015",
+        "result" : "No Violation Issued",
+        "sector" : "Salons And Barbershop - 841",
+        "address" : {
+                "city" : "NEW YORK",
+                "zip" : 10030,
+                "street" : "FREDRCK D BLVD",
+                "number" : 2645
+        }
+}
+{
+        "_id" : ObjectId("56d61033a378eccde8a83559"),
+        "id" : "10302-2015-ENFO",
+        "certificate_number" : 9287089,
+        "business_name" : "NYC CANDY STORE SHOP CORP",
+        "date" : "Feb 25 2015",
+        "result" : "No Violation Issued",
+        "sector" : "Cigarette Retail Dealer - 127",
+        "address" : {
+                "city" : "NEW YORK",
+                "zip" : 10030,
+                "street" : "FREDRCK D BLVD",
+                "number" : 2653
+        }
+}
+{
+        "_id" : ObjectId("56d61033a378eccde8a835de"),
+        "id" : "14475-2015-CMPL",
+        "certificate_number" : 5393002,
+        "business_name" : "AMERICAN MAINTENANCE TECHNOLOGY SERVICES",
+        "date" : "Dec  7 2015",
+        "result" : "Violation Issued",
+        "sector" : "Home Improvement Contractor - 100",
+        "address" : {
+                "city" : "NEW YORK",
+                "zip" : 10030,
+                "street" : "W 139TH ST",
+                "number" : 262
+        }
+}
+{
+        "_id" : ObjectId("56d61033a378eccde8a836bf"),
+        "id" : "22827-2015-ENFO",
+        "certificate_number" : 9289204,
+        "business_name" : "AHMED MOHAMED",
+        "date" : "Apr 27 2015",
+        "result" : "No Violation Issued",
+        "sector" : "Mobile Food Vendor - 881",
+        "address" : {
+                "city" : "NEW YORK",
+                "zip" : 10030,
+                "street" : "W 136TH ST",
+                "number" : 363
+        }
+}
+{
+        "_id" : ObjectId("56d61033a378eccde8a837c2"),
+        "id" : "30022-2015-ENFO",
+        "certificate_number" : 9303186,
+        "business_name" : "ALI, SAFWAT E",
+        "date" : "May 21 2015",
+        "result" : "No Violation Issued",
+        "sector" : "Mobile Food Vendor - 881",
+        "address" : {
+                "city" : "NEW YORK",
+                "zip" : 10030,
+                "street" : "FREDERICK DOUGLASS BLVD",
+                "number" : 2722
+        }
+}
+{
+        "_id" : ObjectId("56d61033a378eccde8a83e48"),
+        "id" : "7006-2015-ENFO",
+        "certificate_number" : 70031881,
+        "business_name" : "NYC CANDY STORE SHOP CORP",
+        "date" : "Feb 10 2015",
+        "result" : "Violation Issued",
+        "sector" : "Cigarette Retail Dealer - 127",
+        "address" : {
+                "city" : "NEW YORK",
+                "zip" : 10030,
+                "street" : "FREDRCK D BLVD",
+                "number" : 2653
+        }
+}
+{
+        "_id" : ObjectId("56d61033a378eccde8a83e90"),
+        "id" : "7086-2015-ENFO",
+        "certificate_number" : 70031880,
+        "business_name" : "143 N EXPRESS DELI CORP.",
+        "date" : "Feb 10 2015",
+        "result" : "Violation Issued",
+        "sector" : "Cigarette Retail Dealer - 127",
+        "address" : {
+                "city" : "NEW YORK",
+                "zip" : 10030,
+                "street" : "FREDRCK D BLVD",
+                "number" : 2697
+        }
+}
+{
+        "_id" : ObjectId("56d61033a378eccde8a83edd"),
+        "id" : "8549-2015-ENFO",
+        "certificate_number" : 9278380,
+        "business_name" : "RIMAR GOURMET DELI INC.",
+        "date" : "Feb 10 2015",
+        "result" : "No Evidence of Activity",
+        "sector" : "Cigarette Retail Dealer - 127",
+        "address" : {
+                "city" : "NEW YORK",
+                "zip" : 10030,
+                "street" : "FREDRCK D BLVD",
+                "number" : 2611
+        }
+}
+{
+        "_id" : ObjectId("56d61033a378eccde8a84178"),
+        "id" : "30135-2015-ENFO",
+        "certificate_number" : 5346764,
+        "business_name" : "THE GOLDEN SCISSORS",
+        "date" : "Jun  1 2015",
+        "result" : "Violation Issued",
+        "sector" : "Salons And Barbershop - 841",
+        "address" : {
+                "city" : "NEW YORK",
+                "zip" : 10030,
+                "street" : "FREDERICK DOUGLASS BLVD",
+                "number" : 2502
+        }
+}
+{
+        "_id" : ObjectId("56d61033a378eccde8a84376"),
+        "id" : "10776-2015-ENFO",
+        "certificate_number" : 9287606,
+        "business_name" : "ALBERT G SORGHO",
+        "date" : "Feb 27 2015",
+        "result" : "No Violation Issued",
+        "sector" : "Wearing Apparel - 450",
+        "address" : {
+                "city" : "NEW YORK",
+                "zip" : 10030,
+                "street" : "7TH AVE",
+                "number" : 2496
+        }
+}
+{
+        "_id" : ObjectId("56d61033a378eccde8a8462c"),
+        "id" : "4169-2015-ENFO",
+        "certificate_number" : 3016050,
+        "business_name" : "MELO AND FALCON DELI GROCERY CORP.",
+        "date" : "Jan 26 2015",
+        "result" : "Pass",
+        "sector" : "Grocery-Retail - 808",
+        "address" : {
+                "city" : "NEW YORK",
+                "zip" : 10030,
+                "street" : "FREDERICK DOUGLASS BLVD",
+                "number" : 2712
+        }
+}
+{
+        "_id" : ObjectId("56d61033a378eccde8a85149"),
+        "id" : "59213-2015-ENFO",
+        "certificate_number" : 9307129,
+        "business_name" : "S. MCMILLAN, INC.",
+        "date" : "Oct 14 2015",
+        "result" : "Out of Business",
+        "sector" : "Funeral Homes - 888",
+        "address" : {
+                "city" : "NEW YORK",
+                "zip" : 10030,
+                "street" : "ADAM CLAYTON POWELL JR BLVD",
+                "number" : 2284
+        }
+}
+{
+        "_id" : ObjectId("56d61033a378eccde8a85234"),
+        "id" : "8536-2015-ENFO",
+        "certificate_number" : 9278383,
+        "business_name" : "SEVEN AVENUE GROCERY STORE CORP",
+        "date" : "Feb 10 2015",
+        "result" : "Out of Business",
+        "sector" : "Cigarette Retail Dealer - 127",
+        "address" : {
+                "city" : "NEW YORK",
+                "zip" : 10030,
+                "street" : "A C POWELL BLVD",
+                "number" : 2460
+        }
+}
+{
+        "_id" : ObjectId("56d61033a378eccde8a8535b"),
+        "id" : "9385-2015-ENFO",
+        "certificate_number" : 70031810,
+        "business_name" : "2278 DELI & GROCERY INC.",
+        "date" : "Feb 24 2015",
+        "result" : "Violation Issued",
+        "sector" : "Cigarette Retail Dealer - 127",
+        "address" : {
+                "city" : "NEW YORK",
+                "zip" : 10030,
+                "street" : "ADAM CLAYTON POWELL JR BLVD",
+                "number" : 2278
+        }
+}
+{
+        "_id" : ObjectId("56d61033a378eccde8a85473"),
+        "id" : "53911-2015-ENFO",
+        "certificate_number" : 5383334,
+        "business_name" : "2320 DELI GROCERY & PIZZA CORP.",
+        "date" : "Sep 17 2015",
+        "result" : "Violation Issued",
+        "sector" : "Grocery-Retail - 808",
+        "address" : {
+                "city" : "NEW YORK",
+                "zip" : 10030,
+                "street" : "ADAM CLAYTON POWELL JR BLVD",
+                "number" : 2320
+        }
+}
+{
+        "_id" : ObjectId("56d61033a378eccde8a85513"),
+        "id" : "8545-2015-ENFO",
+        "certificate_number" : 9278381,
+        "business_name" : "FAMILY GROCERY NO. 2, INC.",
+        "date" : "Feb 10 2015",
+        "result" : "No Violation Issued",
+        "sector" : "Cigarette Retail Dealer - 127",
+        "address" : {
+                "city" : "NEW YORK",
+                "zip" : 10030,
+                "street" : "FREDERICK DOUGLASS BLVD",
+                "number" : 2620
+        }
+}
+{
+        "_id" : ObjectId("56d61033a378eccde8a855c8"),
+        "id" : "31829-2015-ENFO",
+        "certificate_number" : 50057153,
+        "business_name" : "MELO AND FALCON DELI GROCERY CORP.",
+        "date" : "Jun  5 2015",
+        "result" : "No Violation Issued",
+        "sector" : "Cigarette Retail Dealer - 127",
+        "address" : {
+                "city" : "NEW YORK",
+                "zip" : 10030,
+                "street" : "FREDERICK DOUGLASS BLVD",
+                "number" : 2712
+        }
+}
+{
+        "_id" : ObjectId("56d61033a378eccde8a85787"),
+        "id" : "9143-2015-ENFO",
+        "certificate_number" : 9287067,
+        "business_name" : "MAE MY CAKE INC",
+        "date" : "Feb 19 2015",
+        "result" : "No Violation Issued",
+        "sector" : "Grocery-Retail - 808",
+        "address" : {
+                "city" : "NEW YORK",
+                "zip" : 10030,
+                "street" : "ADAM CLAYTON POWELL JR BLVD",
+                "number" : 2380
+        }
+}
+Type "it" for more
+> db.inspections.find({"address.zip":{$eq:10030}}).count()
+182
+> db.inspections.find({"address.zip":10030}).count()
+182
+>
